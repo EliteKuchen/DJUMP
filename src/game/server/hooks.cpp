@@ -214,18 +214,10 @@ void mods_message(int msgtype, int client_id)
 			if(!strcmp(msg->message, "/info"))
 			{
 				char buf[128];
-				str_format(buf, sizeof(buf), "DJUMP 0.31 from EliteKuchen.", RACE_VERSION);
+				str_format(buf, sizeof(buf), "DJUMP 0.32 from EliteKuchen.", RACE_VERSION);
 				game.send_chat_target(client_id, buf);
 				str_format(buf, sizeof(buf), "based on : Race mod %s from Rajh and Redix.", RACE_VERSION);
 				game.send_chat_target(client_id, buf);
-						float deg = pi/2;
-						PROJECTILE *proj = new PROJECTILE(WEAPON_GUN,
-						-1,
-						p->view_pos,
-						vec2(sin(deg),cos(deg)),
-						-2,
-						true, PROJECTILE::PROJECTILE_FLAGS_EXPLODE,
-						0, SOUND_GRENADE_EXPLODE, WEAPON_GUN, true);
 			}
 			else if(!strncmp(msg->message, "/top5", 5) && game.controller->is_race())
 			{
